@@ -20,7 +20,7 @@ exports.verifyUser = (req,res,next)=>{
             else{
                 // console.log(authData);
                 req.user=authData;
-                console.log(req.user.id);
+                console.log(req.user.email_id);
                 next();
             }
         })
@@ -30,13 +30,13 @@ exports.verifyUser = (req,res,next)=>{
     }
     
 }
-exports.verifyAdmin= (req,res,next)=>{
-    if(req.user.user.admin)
-    {
-        next();
-    }
-    else{
-        err=new Error('You are not allowed to perform this operation!');
-        next(err);
-    }
-}
+// exports.verifyAdmin= (req,res,next)=>{
+//     if(req.user.user.admin)
+//     {
+//         next();
+//     }
+//     else{
+//         err=new Error('You are not allowed to perform this operation!');
+//         next(err);
+//     }
+// }
